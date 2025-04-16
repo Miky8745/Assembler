@@ -7,15 +7,17 @@ import os
 import rom
 import validator
 
+assert len(sys.argv) > 1, "Target expected - example command: python compiler.py example.asm"
+
 with open("commands.json") as f: COMMANDS = json.load(f)
 
 TARGET = sys.argv[1]
 FORCE_BUILD = "--force" in sys.argv
 
-def convert_binary(number : int):
+def convert_binary(number : int, padding = 4):
     default_conversion = bin(number)[2:]
     
-    return "0" * (4 - len(default_conversion)) + default_conversion
+    return "0" * (padding - len(default_conversion)) + default_conversion
 
 def compile_file(program : str):
     lines = program.split("\n")
@@ -26,14 +28,17 @@ def compile_file(program : str):
     for line in lines:
         new_line = ""
         number = ""
+        last_char = ""
         for i in line+" ":
             if i == "#":
                 break
 
             if not i.isdigit():
                 if number != "":
-                    new_line += convert_binary(int(number))
+                    new_line += convert_binary(int(number), padding=4 if last_char == "r" else 8)
                     number = ""
+
+                last_char = i
 
                 new_line += i
                 continue
