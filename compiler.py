@@ -26,6 +26,9 @@ def compile_file(program : str):
 
     print("Compiling...", end="")
     for line in lines:
+        if len(line.strip()) < 2 or line[0] == "#":
+            continue
+
         new_line = ""
         number = ""
         last_char = ""
