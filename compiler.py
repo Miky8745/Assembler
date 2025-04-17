@@ -53,6 +53,10 @@ def compile_file(program : str):
                 new_line = new_line.replace(command, COMMANDS.get(command))
 
         new_line = new_line.replace(" ", "").replace("r", "")
+        
+        if len(new_line) > 15 and "x" in new_line:
+            new_line = new_line.replace("xxxx", new_line[16:])
+            new_line = new_line[:16]
 
         machine_code_lines.append(new_line)
 

@@ -1,5 +1,5 @@
-LDI r1 1
-ADD r1 r1 r1
-ADD r1 r1 r1
+LDI r1 0
+INC r1
+INC r1
 NOP
 HLT
