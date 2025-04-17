@@ -9,13 +9,28 @@ import validator
 
 assert len(sys.argv) > 1, "Target expected - example command: python compiler.py example.asm"
 
-with open("commands.json") as f: COMMANDS = json.load(f)
+with open("commands.json") as f: COMMANDS : dict = json.load(f)
+with open("keywords.json") as f: KEYWORDS : dict = json.load(f)
+
+for i in COMMANDS.keys():
+    KEYWORDS[i] = COMMANDS.get(i)
+
+del COMMANDS
 
 TARGET = sys.argv[1]
 FORCE_BUILD = "--force" in sys.argv
 
+PADDING = {
+    " ": 8,
+    "r": 4,
+    "l": 9
+}
+
 def convert_binary(number : int, padding = 4):
     default_conversion = bin(number)[2:]
+
+    if padding is None:
+        padding = 0
     
     return "0" * (padding - len(default_conversion)) + default_conversion
 
@@ -38,7 +53,11 @@ def compile_file(program : str):
 
             if not i.isdigit():
                 if number != "":
-                    new_line += convert_binary(int(number), padding=4 if last_char == "r" else 8)
+                    padding = PADDING.get(last_char)
+                    if last_char == "l":
+                        number = str(int(number) - 1)
+
+                    new_line += convert_binary(int(number), padding=padding)
                     number = ""
 
                 last_char = i
@@ -48,13 +67,13 @@ def compile_file(program : str):
             
             number += i
 
-        for command in COMMANDS.keys():
+        for command in KEYWORDS.keys():
             if command in new_line:
-                new_line = new_line.replace(command, COMMANDS.get(command))
+                new_line = new_line.replace(command, KEYWORDS.get(command))
 
-        new_line = new_line.replace(" ", "").replace("r", "")
+        new_line = new_line.replace(" ", "").replace("r", "").replace("l", "")
         
-        if len(new_line) > 15 and "x" in new_line:
+        if len(new_line) > 15 and "xxxx" in new_line:
             new_line = new_line.replace("xxxx", new_line[16:])
             new_line = new_line[:16]
 

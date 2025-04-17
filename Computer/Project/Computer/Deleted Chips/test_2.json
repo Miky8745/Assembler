@@ -1,0 +1,20 @@
+{
+  "ChipType": 0,
+  "Colour": {
+    "r": 0.3497056,
+    "g": 0.105630837,
+    "b": 0.368412763,
+    "a": 1
+  },
+  "Displays": null,
+  "InputPins":[],
+  "Name": "test",
+  "NameLocation": 0,
+  "OutputPins":[],
+  "Size": {
+    "x": 0.725,
+    "y": 0.375
+  },
+  "SubChips":[],
+  "Wires":[]
+}

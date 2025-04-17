@@ -3,7 +3,7 @@
   "DLSVersion_LastSaved": "2.0.3",
   "DLSVersion_EarliestCompatible": "2.0.0",
   "CreationTime": "2025-04-12T21:18:21.286+02:00",
-  "LastSaveTime": "2025-04-17T13:40:07.921+02:00",
+  "LastSaveTime": "2025-04-17T17:58:58.265+02:00",
   "Prefs_MainPinNamesDisplayMode": 1,
   "Prefs_ChipPinNamesDisplayMode": 1,
   "Prefs_SimPaused": false,
@@ -58,7 +58,11 @@
     "MUX-4bit",
     "PC-16bit",
     "Inv DLatch-1bit(async)",
-    "test"
+    "NOR-4bit",
+    "ALU-FLAGS",
+    "MUX-8+1bit",
+    "FLAGS-RESOLVER",
+    "MUX-1+1bit"
   ],
   "StarredList":[
     {
@@ -106,8 +110,8 @@
       "IsCollection":true
     },
     {
-      "Name":"test",
-      "IsCollection":false
+      "Name":"XOR",
+      "IsCollection":true
     }
   ],
   "ChipCollections":[
@@ -137,13 +141,13 @@
       "Name":"DISPLAY"
     },
     {
-      "Chips":["AND4bit","AND8bit","OR4bit","OR8bit","XOR8bit","NOR8bit","NAND8bit","XNOR8bit","LOGIC-8bit"],
-      "IsToggledOpen":false,
+      "Chips":["AND4bit","AND8bit","OR4bit","OR8bit","XOR8bit","NOR8bit","NAND8bit","XNOR8bit","LOGIC-8bit","NOR-4bit"],
+      "IsToggledOpen":true,
       "Name":"BITWISE"
     },
     {
       "Chips":["XOR3","XOR","XNOR"],
-      "IsToggledOpen":false,
+      "IsToggledOpen":true,
       "Name":"XOR"
     },
     {
@@ -177,13 +181,13 @@
       "Name":"DATA"
     },
     {
-      "Chips":["ADDRESS-DECODER","MUX","INIT","CMP4bit","NOT","MUX-8bit","MUX-16bit","MUX-4bit"],
-      "IsToggledOpen":false,
+      "Chips":["ADDRESS-DECODER","MUX","INIT","CMP4bit","NOT","MUX-8bit","MUX-16bit","MUX-4bit","MUX-8+1bit","MUX-1+1bit"],
+      "IsToggledOpen":true,
       "Name":"UTILS"
     },
     {
-      "Chips":["ROM 256×16","ALU-8bit","REG-FILE-8bit","CONTROL-ROM","Computer","Inst-Memory-16bit","PC-16bit"],
-      "IsToggledOpen":false,
+      "Chips":["ALU-FLAGS","ROM 256×16","ALU-8bit","REG-FILE-8bit","CONTROL-ROM","Computer","Inst-Memory-16bit","PC-16bit","FLAGS-RESOLVER"],
+      "IsToggledOpen":true,
       "Name":"PC"
     },
     {

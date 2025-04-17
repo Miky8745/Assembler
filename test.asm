@@ -1,5 +1,4 @@
-LDI r1 0
-INC r1
-INC r1
-NOP
+LDI r1 3
+DEC r1
+JMP carry l2
 HLT
