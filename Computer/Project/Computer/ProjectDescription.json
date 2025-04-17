@@ -1,0 +1,195 @@
+{
+  "ProjectName": "Computer",
+  "DLSVersion_LastSaved": "2.0.3",
+  "DLSVersion_EarliestCompatible": "2.0.0",
+  "CreationTime": "2025-04-12T21:18:21.286+02:00",
+  "LastSaveTime": "2025-04-17T13:40:07.921+02:00",
+  "Prefs_MainPinNamesDisplayMode": 1,
+  "Prefs_ChipPinNamesDisplayMode": 1,
+  "Prefs_SimPaused": false,
+  "Prefs_SimTargetStepsPerSecond": 1000,
+  "Prefs_SimStepsPerClockTick": 250,
+  "AllCustomChipNames":[
+    "NOT",
+    "AND",
+    "OR",
+    "NOR",
+    "XOR",
+    "XNOR",
+    "XOR3",
+    "AND3",
+    "OR3",
+    "2AND3",
+    "AND4bit",
+    "AND8bit",
+    "OR4bit",
+    "OR8bit",
+    "XOR8bit",
+    "NOR8bit",
+    "NAND8bit",
+    "XNOR8bit",
+    "CMP4bit",
+    "3-STATE8bit",
+    "LOGIC-8bit",
+    "ADDER-1bit",
+    "ADDER-4bit-sealed",
+    "ADDER-4bit",
+    "ADDER-8bit-sealed",
+    "ALU-8bit",
+    "INIT",
+    "LSHIFT",
+    "RSHIFT",
+    "SHIFTER",
+    "SR-Latch",
+    "D Latch-1bit (async)",
+    "D Latch-1bit",
+    "MUX",
+    "REGISTER-1bit",
+    "REGISTER-4bit",
+    "REGISTER-8bit",
+    "3-STATE4bit",
+    "ADDRESS-DECODER",
+    "REG-FILE-8bit",
+    "CONTROL-ROM",
+    "Computer",
+    "Inst-Memory-16bit",
+    "MUX-8bit",
+    "MUX-16bit",
+    "MUX-4bit",
+    "PC-16bit",
+    "Inv DLatch-1bit(async)",
+    "test"
+  ],
+  "StarredList":[
+    {
+      "Name":"PC",
+      "IsCollection":true
+    },
+    {
+      "Name":"MERGE/SPLIT",
+      "IsCollection":true
+    },
+    {
+      "Name":"IN/OUT",
+      "IsCollection":true
+    },
+    {
+      "Name":"UTILS",
+      "IsCollection":true
+    },
+    {
+      "Name":"3-STATE",
+      "IsCollection":true
+    },
+    {
+      "Name":"ADDER",
+      "IsCollection":true
+    },
+    {
+      "Name":"BITWISE",
+      "IsCollection":true
+    },
+    {
+      "Name":"SHIFT",
+      "IsCollection":true
+    },
+    {
+      "Name":"DATA",
+      "IsCollection":true
+    },
+    {
+      "Name":"OR",
+      "IsCollection":true
+    },
+    {
+      "Name":"AND",
+      "IsCollection":true
+    },
+    {
+      "Name":"test",
+      "IsCollection":false
+    }
+  ],
+  "ChipCollections":[
+    {
+      "Chips":["NAND","CLOCK","KEY"],
+      "IsToggledOpen":true,
+      "Name":"BASIC"
+    },
+    {
+      "Chips":["IN-1","IN-4","IN-8","OUT-1","OUT-4","OUT-8"],
+      "IsToggledOpen":false,
+      "Name":"IN/OUT"
+    },
+    {
+      "Chips":["1-4BIT","1-8BIT","4-8BIT","4-1BIT","8-4BIT","8-1BIT"],
+      "IsToggledOpen":false,
+      "Name":"MERGE/SPLIT"
+    },
+    {
+      "Chips":["BUS-1","BUS-4","BUS-8"],
+      "IsToggledOpen":false,
+      "Name":"BUS"
+    },
+    {
+      "Chips":["7-SEGMENT","DOT DISPLAY","RGB DISPLAY"],
+      "IsToggledOpen":false,
+      "Name":"DISPLAY"
+    },
+    {
+      "Chips":["AND4bit","AND8bit","OR4bit","OR8bit","XOR8bit","NOR8bit","NAND8bit","XNOR8bit","LOGIC-8bit"],
+      "IsToggledOpen":false,
+      "Name":"BITWISE"
+    },
+    {
+      "Chips":["XOR3","XOR","XNOR"],
+      "IsToggledOpen":false,
+      "Name":"XOR"
+    },
+    {
+      "Chips":["AND","AND3","2AND3"],
+      "IsToggledOpen":false,
+      "Name":"AND"
+    },
+    {
+      "Chips":["OR","OR3","NOR"],
+      "IsToggledOpen":false,
+      "Name":"OR"
+    },
+    {
+      "Chips":["ADDER-1bit","ADDER-4bit-sealed","ADDER-4bit","ADDER-8bit-sealed"],
+      "IsToggledOpen":false,
+      "Name":"ADDER"
+    },
+    {
+      "Chips":["LSHIFT","RSHIFT","SHIFTER"],
+      "IsToggledOpen":false,
+      "Name":"SHIFT"
+    },
+    {
+      "Chips":["3-STATE BUFFER","3-STATE8bit","3-STATE4bit"],
+      "IsToggledOpen":false,
+      "Name":"3-STATE"
+    },
+    {
+      "Chips":["SR-Latch","D Latch-1bit (async)","D Latch-1bit","REGISTER-1bit","REGISTER-4bit","REGISTER-8bit","Inv DLatch-1bit(async)"],
+      "IsToggledOpen":true,
+      "Name":"DATA"
+    },
+    {
+      "Chips":["ADDRESS-DECODER","MUX","INIT","CMP4bit","NOT","MUX-8bit","MUX-16bit","MUX-4bit"],
+      "IsToggledOpen":false,
+      "Name":"UTILS"
+    },
+    {
+      "Chips":["ROM 256×16","ALU-8bit","REG-FILE-8bit","CONTROL-ROM","Computer","Inst-Memory-16bit","PC-16bit"],
+      "IsToggledOpen":false,
+      "Name":"PC"
+    },
+    {
+      "Chips":[],
+      "IsToggledOpen":true,
+      "Name":"OTHER"
+    }
+  ]
+}

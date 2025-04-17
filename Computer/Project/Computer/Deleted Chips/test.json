@@ -1,0 +1,65 @@
+{
+  "ChipType": 0,
+  "Colour": {
+    "r": 0.233352408,
+    "g": 0.320035875,
+    "b": 0.495498955,
+    "a": 1
+  },
+  "Displays": null,
+  "InputPins":[],
+  "Name": "test",
+  "NameLocation": 0,
+  "OutputPins":[],
+  "Size": {
+    "x": 0.725,
+    "y": 0.375
+  },
+  "SubChips":[
+    {
+      "Name":"REGISTER-8bit",
+      "ID":1701082610,
+      "Label":"",
+      "Position":{
+        "x":-2.48148,
+        "y":0.99074
+      },
+      "OutputPinColourInfo":[{"PinColour":0,"PinID":832940437}],
+      "InternalData":null
+    },
+    {
+      "Name":"REGISTER-8bit",
+      "ID":829198522,
+      "Label":"",
+      "Position":{
+        "x":-2.48148,
+        "y":-0.13926
+      },
+      "OutputPinColourInfo":[{"PinColour":0,"PinID":832940437}],
+      "InternalData":null
+    },
+    {
+      "Name":"REGISTER-8bit",
+      "ID":304261581,
+      "Label":"",
+      "Position":{
+        "x":-2.48148,
+        "y":-1.26926
+      },
+      "OutputPinColourInfo":[{"PinColour":0,"PinID":832940437}],
+      "InternalData":null
+    },
+    {
+      "Name":"REGISTER-8bit",
+      "ID":360040053,
+      "Label":"",
+      "Position":{
+        "x":-2.48148,
+        "y":-2.39926
+      },
+      "OutputPinColourInfo":[{"PinColour":0,"PinID":832940437}],
+      "InternalData":null
+    }
+  ],
+  "Wires":[]
+}

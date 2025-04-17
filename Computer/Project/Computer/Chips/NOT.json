@@ -1,0 +1,99 @@
+{
+  "ChipType": 0,
+  "Colour": {
+    "r": 0.506666839,
+    "g": 0.697084963,
+    "b": 0.433757,
+    "a": 1
+  },
+  "Displays": null,
+  "InputPins":[
+    {
+      "Name":"IN",
+      "ID":1558468070,
+      "Position":{
+        "x":-7.4537,
+        "y":0.91667
+      },
+      "BitCount":1,
+      "Colour":0,
+      "ValueDisplayMode":0
+    }
+  ],
+  "Name": "NOT",
+  "NameLocation": 0,
+  "OutputPins":[
+    {
+      "Name":"OUT",
+      "ID":159955431,
+      "Position":{
+        "x":-1.55556,
+        "y":0.98148
+      },
+      "BitCount":1,
+      "Colour":0,
+      "ValueDisplayMode":0
+    }
+  ],
+  "Size": {
+    "x": 0.575,
+    "y": 0.375
+  },
+  "SubChips":[
+    {
+      "Name":"NAND",
+      "ID":844445597,
+      "Label":"",
+      "Position":{
+        "x":-4.22222,
+        "y":0.91667
+      },
+      "OutputPinColourInfo":[{"PinColour":0,"PinID":2}],
+      "InternalData":null
+    }
+  ],
+  "Wires":[
+    {
+      "SourcePinAddress":{
+        "PinID":0,
+        "PinOwnerID":1558468070
+      },
+      "TargetPinAddress":{
+        "PinID":1,
+        "PinOwnerID":844445597
+      },
+      "ConnectionType":0,
+      "ConnectedWireIndex":-1,
+      "ConnectedWireSegmentIndex":-1,
+      "Points":[{"x":0.0,"y":0.0},{"x":0.0,"y":0.0}]
+    },
+    {
+      "SourcePinAddress":{
+        "PinID":2,
+        "PinOwnerID":844445597
+      },
+      "TargetPinAddress":{
+        "PinID":0,
+        "PinOwnerID":159955431
+      },
+      "ConnectionType":0,
+      "ConnectedWireIndex":-1,
+      "ConnectedWireSegmentIndex":-1,
+      "Points":[{"x":0.0,"y":0.0},{"x":0.0,"y":0.0}]
+    },
+    {
+      "SourcePinAddress":{
+        "PinID":0,
+        "PinOwnerID":1558468070
+      },
+      "TargetPinAddress":{
+        "PinID":0,
+        "PinOwnerID":844445597
+      },
+      "ConnectionType":0,
+      "ConnectedWireIndex":-1,
+      "ConnectedWireSegmentIndex":-1,
+      "Points":[{"x":0.0,"y":0.0},{"x":0.0,"y":0.0}]
+    }
+  ]
+}

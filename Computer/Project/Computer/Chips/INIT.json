@@ -1,0 +1,59 @@
+{
+  "ChipType": 0,
+  "Colour": {
+    "r": 0.887916863,
+    "g": 0.298427,
+    "b": 0.363812923,
+    "a": 1
+  },
+  "Displays": null,
+  "InputPins":[
+    {
+      "Name":"IN",
+      "ID":1183582378,
+      "Position":{
+        "x":-5.57407,
+        "y":-0.7037
+      },
+      "BitCount":1,
+      "Colour":0,
+      "ValueDisplayMode":0
+    }
+  ],
+  "Name": "INIT",
+  "NameLocation": 0,
+  "OutputPins":[
+    {
+      "Name":"OUT",
+      "ID":507596920,
+      "Position":{
+        "x":-3.46296,
+        "y":-0.67593
+      },
+      "BitCount":1,
+      "Colour":0,
+      "ValueDisplayMode":0
+    }
+  ],
+  "Size": {
+    "x": 0.725,
+    "y": 0.375
+  },
+  "SubChips":[],
+  "Wires":[
+    {
+      "SourcePinAddress":{
+        "PinID":0,
+        "PinOwnerID":1183582378
+      },
+      "TargetPinAddress":{
+        "PinID":0,
+        "PinOwnerID":507596920
+      },
+      "ConnectionType":0,
+      "ConnectedWireIndex":-1,
+      "ConnectedWireSegmentIndex":-1,
+      "Points":[{"x":0.0,"y":0.0},{"x":0.0,"y":0.0}]
+    }
+  ]
+}
