@@ -31,4 +31,5 @@ Once you have the machine code inside the ROM of the `Inst-Memory`, go back to t
 - `ADI` - Add Immediate (`ADI r1 1` is `r1 + 1 -> r1`)
 - `INC` - Increment (`INC r1` is `r1 + 1 -> r1`)
 - `DEC` - Decrement (`DEC r1` is `r1 + 255 -> r1` or `r1 - 1 -> r1`)
-- `JMP` - Jump - Unconditional (`JMP always l1` when this line is reached, program jumps to line 1), Conditional - the program jumps to the specified line if the condition is met (`JMP zero l5`), keywords - `always`, `never`, `zero`, `!zero`, `carry`, `!carry`
+- `JMP` - Jump - Unconditional (`JMP always l1` when this line is reached, program jumps to line 1), Conditional - the program jumps to the specified line if the condition is met (`JMP zero l5`), keywords - `always`, `never`, `zero`, `!zero`, `carry`, `!carry`, `==`, `!=`, `>=`, `<`
+- `CMP` - Compare two numbers, the result can be used in a conditional Jump (`CMP r1 r2` compare r1 and r2, store the result in the ALU flags)

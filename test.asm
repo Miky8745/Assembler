@@ -1,4 +1,6 @@
-LDI r1 3
+LDI r1 5
+LDI r2 3
 DEC r1
-JMP carry l2
+CMP r1 r2
+JMP != l3
 HLT

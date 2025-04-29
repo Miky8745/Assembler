@@ -77,21 +77,46 @@ def compile_file(program : str):
             new_line = new_line.replace("xxxx", new_line[16:])
             new_line = new_line[:16]
 
+        new_line = new_line.replace("?", "")
+
         machine_code_lines.append(new_line)
 
     print("Done")
 
     return machine_code_lines
 
+def compile_keywords(keywords = KEYWORDS):
+    changed = False
+    new_data = {}
+    for key, value in keywords.items():
+        for k, v in keywords.items():
+            if k in value:
+                changed = True
+                value = value.replace(k, v)
+        new_data[key] = value
+
+    if changed:
+        new_data = compile_keywords(keywords = new_data)
+
+    return new_data
+
 def main():
+    global KEYWORDS
+
     print("Reading program...", end="")
+    
     with open(TARGET) as f:
         program = f.read()
     
     print("Done")
-
     start = time.time()
     print(f"Compiling started at: {datetime.datetime.now()}")
+    print("Compiling keywords...", end="")
+
+    KEYWORDS = compile_keywords()
+
+    print("Done")
+
     machine_code = compile_file(program)
 
     print("Validating code...", end="")
