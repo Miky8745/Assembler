@@ -20,7 +20,7 @@ del COMMANDS
 TARGET = sys.argv[1]
 FORCE_BUILD = "--force" in sys.argv
 
-assert os.path.exists(os.path.abspath(TARGET)), f"The file {TARGET} doesn't exist or could not be accessed."
+assert os.path.exists(os.path.abspath(TARGET)), f"The file {os.path.abspath(TARGET)} ({TARGET}) doesn't exist or could not be accessed."
 
 PADDING = {
     " ": 8,
