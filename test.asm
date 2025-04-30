@@ -1,4 +1,6 @@
-LDI r1 5
+ndefine i r1
+
+LDI i 5
 LDI r2 3
 DEC r1
 CMP r1 r2

@@ -1,8 +1,8 @@
 import datetime
 import json
+import os
 import sys
 import time
-import os
 
 import rom
 import validator
@@ -28,6 +28,8 @@ PADDING = {
     "l": 9
 }
 
+NUMBER_DEFINITIONS = {}
+
 def convert_binary(number : int, padding = 4):
     default_conversion = bin(number)[2:]
 
@@ -36,15 +38,16 @@ def convert_binary(number : int, padding = 4):
     
     return "0" * (padding - len(default_conversion)) + default_conversion
 
-def compile_file(program : str):
-    lines = program.split("\n")
-
+def compile_file(lines : list[str]):
     machine_code_lines = []
 
-    print("Compiling...", end="")
     for line in lines:
         if len(line.strip()) < 2 or line[0] == "#":
             continue
+
+        for number in NUMBER_DEFINITIONS.keys():
+            if number in line:
+                line = line.replace(number, NUMBER_DEFINITIONS.get(number))
 
         new_line = ""
         number = ""
@@ -83,11 +86,29 @@ def compile_file(program : str):
 
         machine_code_lines.append(new_line)
 
-    print("Done")
-
     return machine_code_lines
 
-def compile_keywords(keywords = KEYWORDS):
+def find_user_definitions(code: list[str]):
+    global KEYWORDS
+
+    real_code = []
+
+    for i in code:
+        if "define" in i[:10]:
+            keyword, value = i.split()[1:3]
+            
+            if "ndefine" in i[:10]:
+                NUMBER_DEFINITIONS[keyword] = value
+                continue
+
+            KEYWORDS[keyword] = value
+            continue
+            
+        real_code.append(i)
+    
+    return real_code
+
+def compile_keywords(keywords):
     changed = False
     new_data = {}
     for key, value in keywords.items():
@@ -98,29 +119,42 @@ def compile_keywords(keywords = KEYWORDS):
         new_data[key] = value
 
     if changed:
-        new_data = compile_keywords(keywords = new_data)
+        new_data = compile_keywords(new_data)
 
     return new_data
 
 def main():
-    global KEYWORDS
+    global KEYWORDS, NUMBER_DEFINITIONS
 
+    print(f"Compilation started at: {datetime.datetime.now()}")
+    start = time.time()
     print("Reading program...", end="")
 
     with open(TARGET) as f:
         program = f.read()
     
     print("Done")
-    start = time.time()
-    print(f"Compiling started at: {datetime.datetime.now()}")
-    print("Compiling keywords...", end="")
 
-    KEYWORDS = compile_keywords()
+    print("Finding user definitions...", end="")
+
+    program = find_user_definitions(program.split("\n"))
 
     print("Done")
+    print("Compiling keywords...", end="")
+
+    KEYWORDS = compile_keywords(KEYWORDS)
+
+    print("Done")
+    print("Compiling number definitions...", end="")
+
+    NUMBER_DEFINITIONS = compile_keywords(NUMBER_DEFINITIONS)
+
+    print("Done")
+    print("Compiling code...", end="")
 
     machine_code = compile_file(program)
 
+    print("Done")
     print("Validating code...", end="")
     problems = validator.validate_compiled_code(machine_code)
     if len(problems) != 0 and not FORCE_BUILD:
