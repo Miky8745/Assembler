@@ -123,38 +123,28 @@ def compile_keywords(keywords):
 
     return new_data
 
+def step(description, func=None):
+    print(f"{description}...", end="")
+    result = func() if func else None
+    print("Done")
+    return result
+
 def main():
     global KEYWORDS, NUMBER_DEFINITIONS
 
     print(f"Compilation started at: {datetime.datetime.now()}")
     start = time.time()
-    print("Reading program...", end="")
 
-    with open(TARGET) as f:
-        program = f.read()
-    
-    print("Done")
+    program = step("Reading program", lambda: open(TARGET).read())
 
-    print("Finding user definitions...", end="")
+    program = step("Finding user definitions", lambda: find_user_definitions(program.split("\n")))
 
-    program = find_user_definitions(program.split("\n"))
+    KEYWORDS = step("Compiling keywords", lambda: compile_keywords(KEYWORDS))
 
-    print("Done")
-    print("Compiling keywords...", end="")
+    NUMBER_DEFINITIONS = step("Compiling number definitions", lambda: compile_keywords(NUMBER_DEFINITIONS))
 
-    KEYWORDS = compile_keywords(KEYWORDS)
+    machine_code = step("Compiling code", lambda: compile_file(program))
 
-    print("Done")
-    print("Compiling number definitions...", end="")
-
-    NUMBER_DEFINITIONS = compile_keywords(NUMBER_DEFINITIONS)
-
-    print("Done")
-    print("Compiling code...", end="")
-
-    machine_code = compile_file(program)
-
-    print("Done")
     print("Validating code...", end="")
     problems = validator.validate_compiled_code(machine_code)
     if len(problems) != 0 and not FORCE_BUILD:
@@ -172,9 +162,7 @@ def main():
 
     print("Done")
 
-    print("Outputting machine code...", end="")
-    rom.output_rom(machine_code, TARGET.removesuffix(".asm"))
-    print("Done")
+    step("Outputting machine code", lambda: rom.output_rom(machine_code, TARGET.removesuffix(".asm")))
 
     print(f"Successfully built {TARGET} in {time.time() - start}s with force build {'enabled' if FORCE_BUILD else 'disabled'}")
 
