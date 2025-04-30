@@ -89,7 +89,7 @@ def compile_file(lines : list[str]):
     return machine_code_lines
 
 def find_user_definitions(code: list[str]):
-    global KEYWORDS
+    global KEYWORDS, NUMBER_DEFINITIONS
 
     real_code = []
 
@@ -103,9 +103,20 @@ def find_user_definitions(code: list[str]):
 
             KEYWORDS[keyword] = value
             continue
-            
+
+        elif len(i) > 1 and "." == i[0]:
+            NUMBER_DEFINITIONS[i.split(" ")[0][1:]] = f"l{len(real_code)}"
+            continue
+
         real_code.append(i)
+
+    keys = sorted(NUMBER_DEFINITIONS.keys(), key=len, reverse=True)
+    NUMBER_DEFINITIONS = {k: NUMBER_DEFINITIONS[k] for k in keys}
+
     
+    keys = sorted(KEYWORDS.keys(), key=len, reverse=True)
+    KEYWORDS = {k: KEYWORDS[k] for k in keys}
+
     return real_code
 
 def compile_keywords(keywords):

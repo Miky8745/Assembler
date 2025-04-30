@@ -35,3 +35,4 @@ Once you have the machine code inside the ROM of the `Inst-Memory`, go back to t
 - `CMP` - Compare two numbers, the result can be used in a conditional Jump (`CMP r1 r2` compare r1 and r2, store the result in the ALU flags)
 - `define` - Define a value not containing a number (`define example example_value`)
 - `ndefine` - Define a number (`ndefine example example_number`)
+- `.` - Define a label used in a jump instead of line (`.example_label`, then later you can use something like `JMP always example_label`)
