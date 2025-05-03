@@ -36,3 +36,5 @@ Once you have the machine code inside the ROM of the `Inst-Memory`, go back to t
 - `define` - Define a value not containing a number (`define example example_value`)
 - `ndefine` - Define a number (`ndefine example example_number`)
 - `.` - Define a label used in a jump instead of line (`.example_label`, then later you can use something like `JMP always example_label`)
+- `CAL` - Call a function (`CAL example_label` jumps to that label and stores where should it return); Calls can be only 16 layers deep - the call stack has only 16 layers
+- `RET` - Return from a function (`RET` jumps to the stored line and pops the call stack)
