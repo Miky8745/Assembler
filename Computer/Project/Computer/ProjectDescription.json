@@ -3,7 +3,7 @@
   "DLSVersion_LastSaved": "2.1.5",
   "DLSVersion_EarliestCompatible": "2.0.0",
   "CreationTime": "2025-04-12T21:18:21.286+02:00",
-  "LastSaveTime": "2025-05-03T20:25:45.139+02:00",
+  "LastSaveTime": "2025-05-04T16:58:17.204+02:00",
   "Prefs_MainPinNamesDisplayMode": 1,
   "Prefs_ChipPinNamesDisplayMode": 1,
   "Prefs_GridDisplayMode": 0,
@@ -11,7 +11,7 @@
   "Prefs_StraightWires": 0,
   "Prefs_SimPaused": false,
   "Prefs_SimTargetStepsPerSecond": 1000,
-  "Prefs_SimStepsPerClockTick": 250,
+  "Prefs_SimStepsPerClockTick": 10,
   "AllCustomChipNames":[
     "NOT",
     "AND",
@@ -68,7 +68,11 @@
     "MUX-1+1bit",
     "16-layer-STACK-8bit",
     "16-layer-STACK-1bit",
-    "CALL-STACK"
+    "CALL-STACK",
+    "RAM-8bit",
+    "RAM-4x4",
+    "DECODE-2-4bit",
+    "RAM-16x16"
   ],
   "StarredList":[
     {
@@ -138,7 +142,7 @@
     },
     {
       "Chips":["BUS-1","BUS-4","BUS-8"],
-      "IsToggledOpen":false,
+      "IsToggledOpen":true,
       "Name":"BUS"
     },
     {
@@ -182,17 +186,17 @@
       "Name":"3-STATE"
     },
     {
-      "Chips":["SR-Latch","D Latch-1bit (async)","D Latch-1bit","REGISTER-1bit","REGISTER-4bit","REGISTER-8bit","Inv DLatch-1bit(async)","16-layer-STACK-8bit","16-layer-STACK-1bit"],
+      "Chips":["SR-Latch","D Latch-1bit (async)","D Latch-1bit","REGISTER-1bit","REGISTER-4bit","REGISTER-8bit","Inv DLatch-1bit(async)","16-layer-STACK-8bit","16-layer-STACK-1bit","RAM-8bit","RAM-4x4"],
       "IsToggledOpen":true,
       "Name":"DATA"
     },
     {
-      "Chips":["ADDRESS-DECODER","MUX","INIT","CMP4bit","NOT","MUX-8bit","MUX-16bit","MUX-4bit","MUX-8+1bit","MUX-1+1bit"],
-      "IsToggledOpen":false,
+      "Chips":["ADDRESS-DECODER","MUX","INIT","CMP4bit","NOT","MUX-8bit","MUX-16bit","MUX-4bit","MUX-8+1bit","MUX-1+1bit","DECODE-2-4bit"],
+      "IsToggledOpen":true,
       "Name":"UTILS"
     },
     {
-      "Chips":["ALU-FLAGS","ROM 256×16","ALU-8bit","REG-FILE-8bit","CONTROL-ROM","Computer","Inst-Memory-16bit","PC-16bit","FLAGS-RESOLVER","CALL-STACK"],
+      "Chips":["ALU-FLAGS","ROM 256×16","ALU-8bit","REG-FILE-8bit","CONTROL-ROM","Computer","Inst-Memory-16bit","PC-16bit","FLAGS-RESOLVER","CALL-STACK","RAM-16x16"],
       "IsToggledOpen":true,
       "Name":"PC"
     },

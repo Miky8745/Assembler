@@ -1,8 +1,6 @@
-LDI r1 1
-.start
-CAL add
-HLT
+LDI r1 5
 
-.add
-ADD r1 r1 r1
-RET
+STR r0 r1 n0
+
+LOD r0 r2 n0
+HLT

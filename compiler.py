@@ -25,6 +25,7 @@ assert os.path.exists(os.path.abspath(TARGET)), f"The file {os.path.abspath(TARG
 PADDING = {
     " ": 8,
     "r": 4,
+    "n": 4,
     "l": 9
 }
 
@@ -76,7 +77,8 @@ def compile_file(lines : list[str]):
             if command in new_line:
                 new_line = new_line.replace(command, KEYWORDS.get(command))
 
-        new_line = new_line.replace(" ", "").replace("r", "").replace("l", "")
+        for i in PADDING.keys():
+            new_line = new_line.replace(i, "")
         
         if len(new_line) > 15 and "xxxx" in new_line:
             new_line = new_line.replace("xxxx", new_line[16:])
