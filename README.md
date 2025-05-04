@@ -43,4 +43,4 @@ Once you have the machine code inside the ROM of the `Inst-Memory`, go back to t
 | `LOD`       | Load a value from memory to register (`LOD r0 r1 n5` - Load a value from memory address 5 (0 (`r0`) + 5 (`n5`)) to register 1)                                                                                                                                                    |
 | `STR`       | Store a value from register to memory (`STR r0 r1 n3` - Store a value from RAM address 3 (`r0` + `n3`) to register 1)                                                                                                                                                             |
 
-Low-level instructions spreadsheet: https://docs.google.com/spreadsheets/d/1LUdcMzXBbyvQ7C-92FkX6OZsNRdaSb_byfD6Byjk5o8/edit?usp=sharing
+[>>> Low-level instructions spreadsheet <<<](https://docs.google.com/spreadsheets/d/1LUdcMzXBbyvQ7C-92FkX6OZsNRdaSb_byfD6Byjk5o8/edit?usp=sharing)
