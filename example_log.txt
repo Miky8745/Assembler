@@ -1,0 +1,9 @@
+Compilation started at: 2025-05-06 15:54:20.555761
+Reading program...Done
+Finding user definitions...Done
+Compiling keywords...Done
+Compiling number definitions...Done
+Compiling code...Done
+Validating code...Done
+Outputting machine code...Done
+Successfully built .\test.asm in 0.023798227310180664s with force build disabled
